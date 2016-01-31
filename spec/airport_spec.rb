@@ -12,10 +12,11 @@ require 'airport'
    end
 
    it 'doesn\'t allow landing when airport is full' do
+plane = double :plane
      20.times do
-     airport.land(:plane)
+     airport.land(plane)
    end
-   expect {airport.land(:plane)}.to raise_error 'Cannot land a plane. Airport is full.'
+   expect {airport.land(plane)}.to raise_error 'Cannot land a plane. Airport is full.'
 
   end
 end

@@ -3,12 +3,13 @@ class Airport
 
 def initialize(capacity)
   @capacity = capacity
-@num_of_planes_landed = 0
+  @planes = []
+
 end
 
 def land(plane)
-  raise 'Cannot land a plane. Airport is full.' if @num_of_planes_landed >= @capacity
-  @num_of_planes_landed += 1
+  raise 'Cannot land a plane. Airport is full.' if @planes.length >= @capacity
+  @planes << plane
 end
 
 
