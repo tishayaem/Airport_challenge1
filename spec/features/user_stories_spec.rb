@@ -17,6 +17,7 @@ describe 'User Stories' do
     it 'instructs plane to take off' do
       airport = Airport.new(20)
       plane = Plane.new
+      allow(airport).to receive(:stormy?).and_return false
       airport.take_off(plane)
     end
 
@@ -26,6 +27,7 @@ describe 'User Stories' do
     it 'prevent landing when the airport is full' do
       airport = Airport.new(20)
       plane = Plane.new
+      allow(airport).to receive(:stormy?).and_return false
       20.times do
       airport.land(plane)
       end
