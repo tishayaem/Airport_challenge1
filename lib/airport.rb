@@ -24,6 +24,10 @@ def full?
 @planes.length >= @capacity
 end
 
+def stormy?
+  Weather.stormy?
+end
+
 
 
 end
