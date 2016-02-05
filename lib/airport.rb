@@ -28,6 +28,19 @@ def stormy?
   Weather.stormy?
 end
 
+def at_airport?(plane)
+    planes.include?(plane)
+  end
+
+  def add_plane(plane)
+    planes << plane
+  end
+
+  def remove_plane(plane)
+    planes.pop
+  end
+end
+
 
 
 end

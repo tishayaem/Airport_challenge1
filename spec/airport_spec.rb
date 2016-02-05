@@ -39,4 +39,15 @@ context 'when not stormy' do
     end
   end
 end
+
+context 'defaults' do
+   subject(:default_airport) { described_class.new(weather_reporter) }
+
+   it 'has a default capacity' do
+     allow(weather_reporter).to receive(:stormy?).and_return false
+     described_class::DEFAULT_CAPACITY.times { default_airport.land(plane) }
+     expect { default_airport.land(plane) }.to raise_error 'Cannot land plane: airport full'
+   end
+ end
+end
 end
